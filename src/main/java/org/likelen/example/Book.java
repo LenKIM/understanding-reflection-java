@@ -8,43 +8,27 @@ package org.likelen.example;
 @MyAnnotation(number = 200, value = 300)
 public class Book {
 
-    @MyAnnotation(number = 100, value = 200)
-    private String a = "a";
-    private static String B = "Book";
-    private static final String C = "Book";
-    public String d = "d";
-    protected String e = "e";
-
-    private String title;
-
-    public Book(String title) {
-        this.title = title;
-    }
-
-    public String getTitle() {
-        return title;
-    }
+    @MyAnnotation
+    public static String a = "A";
+    private String b = "B";
 
     public Book() {
     }
 
-    public Book(String a, String d, String e) {
-        this.a = a;
-        this.d = d;
-        this.e = e;
+    public Book(String b) {
+        this.b = b;
     }
 
-    private void f() {
-        System.out.println("F");
+    private void c(){
+        System.out.println("invoke method c");
     }
 
-    public void g() {
-        System.out.println("g");
+    public void d(){
+        System.out.println("invoke method d");
     }
 
-    public int h() {
-        return 100;
+    public int sum(int left, int right){
+        return left + right;
     }
-
 
 }
