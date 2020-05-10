@@ -7,11 +7,9 @@ import java.util.Arrays;
 
 /**
  * Hello world!
- *
  */
-public class App 
-{
-    public static void main( String[] args ) throws ClassNotFoundException, InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException {
+public class App {
+    public static void main(String[] args) throws ClassNotFoundException, InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException {
 
 //        accessClassInfo();
 
@@ -22,7 +20,22 @@ public class App
 //        accessInterfaces();
 //        accessModifier();
 //        accessAnnotation();
-        accessConstructor();
+//        accessConstructor();
+
+        accessAnnotationValue();
+    }
+
+    private static void accessAnnotationValue() {
+        // 특정 필드에 붙은 어노테이션을 확인
+        Arrays.stream(Book.class.getDeclaredFields()).forEach(f -> {
+            Arrays.stream(f.getAnnotations()).forEach(a -> {
+                if (a instanceof MyAnnotation) {
+                    MyAnnotation myAnnotation = (MyAnnotation) a;
+                    System.out.println(myAnnotation.value());
+                    System.out.println(myAnnotation.number());
+                }
+            });
+        });
     }
 
     private static void accessConstructor() throws ClassNotFoundException, NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {

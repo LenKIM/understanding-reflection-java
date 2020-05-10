@@ -5,9 +5,10 @@
 
 package org.likelen.example;
 
-@MyAnnotation
+@MyAnnotation(number = 200, value = 300)
 public class Book {
 
+    @MyAnnotation(number = 100, value = 200)
     private String a = "a";
     private static String B = "Book";
     private static final String C = "Book";
