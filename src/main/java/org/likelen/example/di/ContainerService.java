@@ -5,9 +5,16 @@
 
 package org.likelen.example.di;
 
+import java.lang.reflect.InvocationTargetException;
+
 public class ContainerService {
 
     public static <T> T getObject(Class<T> classType) {
-        return null;
+        try {
+             T instance = classType.getConstructor(null).newInstance();
+             return instance;
+        } catch (InstantiationException | IllegalAccessException | InvocationTargetException | NoSuchMethodException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
