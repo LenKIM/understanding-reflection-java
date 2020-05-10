@@ -17,6 +17,10 @@
 
 ## 2. 리플랙션 API - 클래스 정보 조회
 
+[Branch> 01-reflection-api-클래스-정보-조회](https://github.com/LenKIM/Understanding-Reflection-Java/tree/01-reflection-api-클래스-정보-조회)
+
+
+
 리플렉션의 시작은 Class\<T>
 
 - https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html
@@ -162,6 +166,10 @@ System.out.println(book);
 
 ## 3. 애노테이션과 리플랙션
 
+
+
+[Branch> 02-annotation&reflection](https://github.com/LenKIM/Understanding-Reflection-Java/tree/02-annotation%26reflection)
+
 ```java
 public @interface MyAnnotation {
 }
@@ -256,6 +264,10 @@ Arrays.stream(Book.class.getDeclaredFields()).forEach(f -> {
 
 ## 4. 리플랙션 API - 클래스 정보 수정 또는 실행
 
+[branch> 03-Modifyorexecuteclassinformation](https://github.com/LenKIM/Understanding-Reflection-Java/tree/03-Modifyorexecuteclassinformation)
+
+
+
 리플랙션을 활용해서 클래스의 정보를 수정하거나 메소드를 실행시켜봅시다.
 
 ```java
@@ -322,6 +334,12 @@ public App() {
 
 
 ## 5. 나만의 DI 프레임워크 만들기.
+
+
+
+[branch> 04-make-my-di-framework](https://github.com/LenKIM/Understanding-Reflection-Java/tree/04-make-my-di-framework)
+
+
 
 ```java
 import java.lang.annotation.Retention;
@@ -424,12 +442,3 @@ public static <T> T getObject(Class<T> classType){
         return instance;
     }
 ```
-
-
-
-위 테스트 코드를 다시 동작 시키면?
-
-
-
-끝!
-
